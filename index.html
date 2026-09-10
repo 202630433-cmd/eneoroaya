@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수업시간 몰래 운동 추천기</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-open {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-open:hover {
+            background-color: #357ABD;
+        }
+
+        /* 모달 스타일 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 320px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            color: #666;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #2ECC71;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        /* 결과 표시 창 */
+        .result-box {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            background-color: #eef9f1;
+            border: 1px solid #c2eabd;
+            border-radius: 8px;
+            display: none;
+            text-align: left;
+        }
+
+        .result-box h3 {
+            margin-top: 0;
+            color: #27ae60;
+            font-size: 1.2rem;
+        }
+
+        .score-info {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .star {
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🤫 수업시간 몰래 운동 추천기</h1>
+        <button class="btn-open" onclick="openModal()">과목 입력하기</button>
+
+        <div id="resultBox" class="result-box">
+            <h3 id="resultTitle"></h3>
+            <div id="scoreInfo" class="score-info"></div>
+            <p id="resultText"></p>
+        </div>
+    </div>
+
+    <!-- 입력 모달 창 -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal">
+            <h2>과목 입력</h2>
+            <div class="input-group">
+                <label for="subjectInput">과목명 (예: 수학, 영어, 역사)</label>
+                <input type="text" id="subjectInput" placeholder="과목을 입력하세요" onkeyup="if(window.event.keyCode==13){generateExercise()}">
+            </div>
+            <button class="btn-submit" onclick="generateExercise()">운동 추천받기</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('modalOverlay').style.display = 'flex';
+            document.getElementById('subjectInput').focus();
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        function generateExercise() {
+            const subject = document.getElementById('subjectInput').value.trim();
+
+            if (!subject) {
+                alert('과목을 입력해 주세요!');
+                return;
+            }
+
+            // 1. 운동할 시간 랜덤 생성 (5분 ~ 25분 사이, 5분 단위)
+            const randomTime = (Math.floor(Math.random() * 5) + 1) * 5;
+
+            // 2. 난이도/적합도 점수 랜덤 생성 (1점 ~ 5점)
+            const score = Math.floor(Math.random() * 5) + 1;
+            const stars = "⭐".repeat(score) + "☆".repeat(5 - score);
+
+            // 3. 랜덤 몰래 운동 목록
+            const exercises = [
+                "필기하는 척하면서 **투명 의자 자세** 유지하기",
+                "책에 집중하는 척하며 **복근 힘주기(드로인 운동)** 10초 유지",
+                "고개 숙이고 칠판 보는 척하며 **발꿈치 들었다 내리기**",
+                "바른 자세로 앉아 **엉덩이에 힘주기** 5초씩 반복하기",
+                "허리를 똑바로 세우고 **자세 교정 및 등 근육 조이기**",
+                "발가락 오므렸다 펴며 **발바닥 근육 자극하기**"
+            ];
+
+            const randomExercise = exercises[Math.floor(Math.random() * exercises.length)];
+
+            // 결과 출력
+            document.getElementById('resultTitle').innerText = `[${subject}] 수업 몰래 운동`;
+            
+            document.getElementById('scoreInfo').innerHTML = `
+                ⏱️ 추천 운동 시간: <strong>${randomTime}분</strong><br>
+                🔥 몰래 운동 점수: <span class="star">${stars}</span> (${score} / 5점)
+            `;
+
+            document.getElementById('resultText').innerHTML = `💪 **추천 운동:**<br>${randomExercise}`;
+            
+            document.getElementById('resultBox').style.display = 'block';
+            
+            // 모달 닫기 및 입력값 초기화
+            closeModal();
+            document.getElementById('subjectInput').value = '';
+        }
+
+        // 모달 바깥 영역 클릭 시 닫기
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalOverlay');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
