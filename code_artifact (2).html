@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘 수업시간 몰래 운동할 과목 추천! 💖⚡</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts (Gaegu & Gamja Flower for maximum aegyo vibe) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Jua', 'Gaegu', cursive, sans-serif;
+      background: radial-gradient(circle at 20% 20%, #ff007f, #7928ca, #00dfd8, #ff0080);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f, inset 0 0 15px #ff007f; }
+      50% { box-shadow: 0 0 25px #00f0ff, 0 0 50px #00f0ff, inset 0 0 20px #00f0ff; }
+    }
+
+    @keyframes bounceBubbly {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.03); }
+    }
+
+    @keyframes flashWarning {
+      0%, 100% { background-color: #ff0055; box-shadow: 0 0 20px #ff0055; }
+      50% { background-color: #ffe600; box-shadow: 0 0 35px #ffe600; color: #000; }
+    }
+
+    @keyframes floatSparkle {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+      50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+      100% { transform: translateY(0px) rotate(360deg); opacity: 0.8; }
+    }
+
+    .neon-card {
+      background: rgba(20, 10, 35, 0.75);
+      backdrop-filter: blur(16px);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 0, 128, 0.3);
+    }
+
+    .neon-btn {
+      transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .neon-btn:hover {
+      transform: scale(1.08) rotate(-1deg);
+      box-shadow: 0 0 25px #00ffff, 0 0 50px #ff007f;
+    }
+
+    .neon-btn:active {
+      transform: scale(0.95);
+    }
+
+    .glow-title {
+      text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #00f0ff, 0 0 80px #00f0ff;
+    }
+
+    .flash-alert {
+      animation: flashWarning 0.6s infinite alternate;
+    }
+
+    .bubbly-bounce {
+      animation: bounceBubbly 3s infinite ease-in-out;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff007f;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen items-center justify-center p-3 md:p-6 relative">
+
+  <!-- Floating Sparkles Background Decor -->
+  <div class="fixed top-10 left-10 text-3xl pointer-events-none bubbly-bounce" style="animation-delay: 0.2s;">✨</div>
+  <div class="fixed top-20 right-12 text-4xl pointer-events-none bubbly-bounce" style="animation-delay: 0.7s;">💖</div>
+  <div class="fixed bottom-12 left-16 text-4xl pointer-events-none bubbly-bounce" style="animation-delay: 1.2s;">⚡</div>
+  <div class="fixed bottom-20 right-10 text-3xl pointer-events-none bubbly-bounce" style="animation-delay: 1.5s;">🐾</div>
+
+  <main class="w-full max-w-2xl neon-card rounded-3xl p-5 md:p-8 relative z-10 my-auto">
+    <!-- Header -->
+    <header class="text-center mb-6">
+      <div class="inline-block bg-pink-500/30 text-pink-200 text-xs md:text-sm px-4 py-1.5 rounded-full border border-pink-400/50 mb-2 animate-pulse">
+        🚨 쌤들 눈 가리고 몰래 살빠지능 비밀 프로젝트! 🚨
+      </div>
+      <h1 class="text-3xl md:text-5xl font-black glow-title tracking-wider text-yellow-300 mb-2">
+        몰컴 대신 몰운동! 🏋️‍♀️✨
+      </h1>
+      <p class="text-pink-200 text-base md:text-lg font-bold">
+        오늘 교시별로 쌤 성향 체크하구 최적의 운동 찾기용~💕
+      </p>
+    </header>
+
+    <!-- STEP 1: SELECT DAY -->
+    <section id="step1" class="space-y-6">
+      <div class="text-center">
+        <h2 class="text-2xl md:text-3xl font-extrabold text-cyan-300 mb-2">
+          Step 1. 오늘 무슨 요일이라구? 선택해죠용~💖
+        </h2>
+        <p class="text-sm text-pink-200">요일별 수업 시간표가 쨔잔하고 로딩된당~⚡</p>
+      </div>
+
+      <div class="grid grid-cols-5 gap-2 md:gap-4 my-6">
+        <button onclick="selectDay('월')" class="day-btn neon-btn bg-gradient-to-br from-pink-500 to-rose-600 hover:from-pink-400 hover:to-rose-500 text-white font-black text-xl md:text-2xl p-4 md:p-6 rounded-2xl border-2 border-white/50 text-center shadow-lg">
+          월<span class="block text-xs md:text-sm font-normal mt-1">월요병!⚡</span>
+        </button>
+        <button onclick="selectDay('화')" class="day-btn neon-btn bg-gradient-to-br from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 text-white font-black text-xl md:text-2xl p-4 md:p-6 rounded-2xl border-2 border-white/50 text-center shadow-lg">
+          화<span class="block text-xs md:text-sm font-normal mt-1">화이팅🔥</span>
+        </button>
+        <button onclick="selectDay('수')" class="day-btn neon-btn bg-gradient-to-br from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black text-xl md:text-2xl p-4 md:p-6 rounded-2xl border-2 border-white/50 text-center shadow-lg">
+          수<span class="block text-xs md:text-sm font-normal mt-1">수요일💧</span>
+        </button>
+        <button onclick="selectDay('목')" class="day-btn neon-btn bg-gradient-to-br from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-black text-xl md:text-2xl p-4 md:p-6 rounded-2xl border-2 border-white/50 text-center shadow-lg">
+          목<span class="block text-xs md:text-sm font-normal mt-1">목표직전🌳</span>
+        </button>
+        <button onclick="selectDay('금')" class="day-btn neon-btn bg-gradient-to-br from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-xl md:text-2xl p-4 md:p-6 rounded-2xl border-2 border-white/50 text-center shadow-lg">
+          금<span class="block text-xs md:text-sm font-normal mt-1">불금이당🎉</span>
+        </button>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white/10 border border-white/20 text-center text-sm md:text-base text-yellow-200">
+        💡 <span class="font-bold">팁:</span> 권이담 쌤이나 류지구 쌤 시간표가 있으면 벌점주의보 🚨 발령 가능성이 높다눙!
+      </div>
+    </section>
+
+    <!-- STEP 2: SELECT SUBJECTS & MOOD PER PERIOD -->
+    <section id="step2" class="space-y-6 hidden">
+      <div class="flex items-center justify-between border-b border-white/20 pb-3">
+        <div>
+          <span id="selectedDayBadge" class="bg-yellow-400 text-purple-900 text-xs md:text-sm font-black px-3 py-1 rounded-full uppercase">
+            월요일 시간표
+          </span>
+          <h2 class="text-xl md:text-2xl font-bold text-cyan-300 mt-1">
+            교시별 과목이랑 쌤 기분 알려죠! ✏️
+          </h2>
+        </div>
+        <button onclick="goToStep(1)" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded-lg border border-white/30">
+          ◀ 요일 다시 고르기
+        </button>
+      </div>
+
+      <p class="text-xs md:text-sm text-pink-200">
+        슬라이더로 오늘 쌤 기분(😊~😡)을 꼭 체크해죠! 위험하면 벌점 폭탄 맞는다구웅~!
+      </p>
+
+      <div id="periodsContainer" class="space-y-4 max-h-[450px] overflow-y-auto pr-1">
+        <!-- Dynamically generated period rows here -->
+      </div>
+
+      <button onclick="calculateBestExercise()" class="w-full neon-btn bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-400 hover:from-yellow-300 hover:to-cyan-300 text-purple-950 font-black text-xl md:text-2xl py-4 rounded-2xl shadow-xl border-2 border-white">
+        💖 오늘 최적의 몰래운동 분석하기! 💖
+      </button>
+    </section>
+
+    <!-- STEP 3: RESULT SCREEN -->
+    <section id="step3" class="space-y-6 hidden">
+      <div class="text-center">
+        <span class="bg-emerald-400 text-emerald-950 text-xs md:text-sm font-black px-4 py-1 rounded-full">
+          ✨ 분석 완료! 몰래 운동 성공 확률 99.9% ✨
+        </span>
+        <h2 class="text-2xl md:text-4xl font-extrabold text-yellow-300 mt-2 glow-title">
+          오늘의 BEST 몰래운동 교시! 🎉
+        </h2>
+      </div>
+
+      <!-- Result Card -->
+      <div class="bg-gradient-to-b from-purple-900/90 to-pink-900/90 border-4 border-yellow-300 rounded-3xl p-5 md:p-6 text-center relative overflow-hidden shadow-2xl">
+        <div class="absolute -top-6 -right-6 text-8xl opacity-20 pointer-events-none">🏋️‍♀️</div>
+        
+        <!-- Period & Subject Title -->
+        <div class="inline-block bg-pink-600/80 px-4 py-1 rounded-xl text-yellow-200 text-sm md:text-base font-bold mb-2">
+          <span id="resPeriod">3교시</span> - <span id="resSubject">체육 (류지구 쌤)</span>
+        </div>
+
+        <!-- Animal Avatar & Exercise Name -->
+        <div class="my-3">
+          <div id="resAvatar" class="text-6xl md:text-7xl mb-2 bubbly-bounce inline-block">🦥</div>
+          <h3 id="resExerciseName" class="text-2xl md:text-3xl font-black text-cyan-300">
+            투명 의자 하체 단련술 🦵
+          </h3>
+          <p id="resAnimalTag" class="text-xs md:text-sm text-pink-300 font-bold mt-1">
+            "나무에 매달린 슬로스처럼 은밀하구 완벽하게!"
+          </p>
+        </div>
+
+        <!-- Score Meter -->
+        <div class="bg-black/40 rounded-xl p-3 my-4 border border-white/20">
+          <div class="flex justify-between text-xs md:text-sm mb-1">
+            <span class="text-pink-200">몰래 운동 성공 안전지수 🛡️</span>
+            <span id="resScoreText" class="font-black text-yellow-300">98점 / 100점</span>
+          </div>
+          <div class="w-full bg-gray-700 h-4 rounded-full overflow-hidden p-0.5 border border-white/30">
+            <div id="resScoreBar" class="bg-gradient-to-r from-green-400 to-cyan-400 h-full rounded-full transition-all duration-1000" style="width: 98%;"></div>
+          </div>
+        </div>
+
+        <!-- Exercise Guide -->
+        <div class="text-left bg-white/10 rounded-2xl p-4 border border-white/20 space-y-2 text-sm md:text-base">
+          <p class="font-bold text-yellow-200 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-cyan-300"></i> 운동 가이드 방법용~!
+          </p>
+          <ul id="resGuideList" class="list-disc list-inside space-y-1 text-gray-100 text-xs md:text-sm">
+            <li>의자 끝에 살짝 걸터앉아서 허리를 곧게 펴용!</li>
+            <li>책상 밑으로 발꿈치를 살짝 들어올려 종아리에 힘주기!</li>
+            <li>쌤이랑 눈맞추며 밝게 고개 끄덕이면 절대 안걸린당!</li>
+          </ul>
+        </div>
+
+        <!-- Aegyo Commentary -->
+        <div class="mt-4 bg-pink-500/20 p-3 rounded-xl border border-pink-400/40 text-xs md:text-sm text-pink-100 italic">
+          💬 <span id="resAegyoComment">"오늘 이 시간에 운동하면 쌤도 감쪽같이 속구 내 다리도 날씬해진다웅~ 완전 럭키비키잖아?! 💕"</span>
+        </div>
+      </div>
+
+      <!-- Emergency Warning Modal Trigger / Status -->
+      <div id="emergencyWarningBox" class="hidden p-4 rounded-2xl border-2 flash-alert text-center text-xs md:text-sm font-black text-white">
+        🚨 [벌점 주의보 발령!] 권이담/류지구 쌤 기분이 안좋아서 단속 지수 최상급! 조심조심 숨쉬기 운동 위주로 해야 해용! 🚨
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="grid grid-cols-2 gap-3">
+        <button onclick="shareResult()" class="neon-btn bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-black py-3 rounded-2xl shadow-lg border border-white/40 text-sm md:text-base">
+          📲 친구한테 자랑하깅!
+        </button>
+        <button onclick="goToStep(1)" class="neon-btn bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-400 hover:to-pink-500 text-white font-black py-3 rounded-2xl shadow-lg border border-white/40 text-sm md:text-base">
+          🔄 다시 테스트해죠!
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Custom Alert/Toast Container -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-black/80 border-2 border-cyan-400 text-white px-6 py-3 rounded-full text-sm font-bold shadow-2xl transition-all duration-300 opacity-0 pointer-events-none z-50">
+    알림 메세지용! 💕
+  </div>
+
+  <script>
+    // Subject List with Teacher Names
+    const SUBJECTS = [
+      { id: '사회', name: '사회', teacher: '조일경', stealthBase: 80, desc: '필기하는 척 하체 운동하기 짱 좋은 과목!' },
+      { id: '수학', name: '수학', teacher: '안세경', stealthBase: 40, desc: '칠판 집중도가 높아서 걸리기 쉬움! 초집중 필요!' },
+      { id: '진로', name: '진로', teacher: '진로선생님', stealthBase: 95, desc: '자유로운 분위기! 스트레칭 천국이당~' },
+      { id: '국어', name: '국어', teacher: '박지연/배성님', stealthBase: 70, desc: '교과서 세워두고 은밀히 조지기!' },
+      { id: '영어', name: '영어', teacher: '정지윤', stealthBase: 65, desc: '본문 읽을 때 발가락 운동 고고!' },
+      { id: '기술', name: '기술', teacher: '장민석', stealthBase: 75, desc: '실습 시간 틈타 코어 힘주기!' },
+      { id: '가정', name: '가정', teacher: '권이담', stealthBase: 30, isDangerous: true, desc: '🚨 권이담 쌤 벌점주의보! 레이더 작동중!' },
+      { id: '체육', name: '체육', teacher: '류지구', stealthBase: 35, isDangerous: true, desc: '🚨 류지구 쌤 매의 눈! 체육시간엔 이론만 몰운동!' },
+      { id: '과학', name: '과학', teacher: '김지현/안다솔', stealthBase: 60, desc: '실험 도중 몰래 복근 힘주기!' },
+      { id: '미술', name: '미술(창체)', teacher: '김윤정', stealthBase: 90, desc: '그림 그리며 사부작사부작 운동하기 굿!' },
+      { id: '역사', name: '역사', teacher: '오혜민', stealthBase: 55, desc: '옛날 이야기 들으며 은근슬쩍 발목 돌리기!' },
+      { id: '한문', name: '한문', teacher: '한상미', stealthBase: 70, desc: '한자 획 쓰면서 어깨 스트레칭!' }
+    ];
+
+    // Default Timetables per Day
+    const DEFAULT_TIMETABLES = {
+      '월': ['국어', '수학', '사회', '영어', '과학', '체육', '진로'],
+      '화': ['수학', '국어', '역사', '가정', '기술', '미술', '영어'],
+      '수': ['영어', '사회', '과학', '한문', '수학', '국어', '체육'],
+      '목': ['가정', '기술', '국어', '수학', '역사', '사회', '진로'],
+      '금': ['미술', '미술', '과학', '영어', '한문', '수학', '국어']
+    };
+
+    // Secret Exercise Data Linked with Animal Avatars
+    const EXERCISES = [
+      {
+        animal: '🦥 Sloth',
+        avatar: '🦥',
+        name: '투명 의자 하체 단련술 🦵',
+        guides: [
+          '엉덩이를 의자 끝에 3cm만 살짝 떼고 유지해용!',
+          '허벅지 안쪽에 힘 딱 주고 10초간 버티기!',
+          '쌤이랑 눈 마주치면 해맑게 고개만 끄덕거리기!'
+        ],
+        aegyo: '슬로스처럼 미동도 없이 하체 타들어가는 중~ 쌤은 절대 모른다웅! 🤫'
+      },
+      {
+        animal: '🦉 Owl',
+        avatar: '🦉',
+        name: '부엉이표 소리없는 복근 조이기 🧘‍♀️',
+        guides: [
+          '등받이에 허리 붙이고 배꼽을 척추 쪽으로 쏙 당겨용!',
+          '숨을 천천히 내쉬면서 아랫배에 강한 압력 주기!',
+          '얼굴 표정은 세상에서 제일 열공하는 모범생 표정 유지!'
+        ],
+        aegyo: '부엉이의 혜안처럼 은밀하게 복근 단련했당! 뱃살 안녕~ 💖'
+      },
+      {
+        animal: '🐿️️ Squirrel',
+        avatar: '🐿️',
+        name: '다람쥐 발꿈치 콕콕 종아리 펌핑 🐿️',
+        guides: [
+          '책상 밑에서 양발 뒤꿈치를 업-다운 반복해용!',
+          '발가락 끝으로 바닥을 살짝 누르며 자극 느끼기!',
+          '필기하는 손동작이랑 박자 맞추면 완전 범죄 성공!'
+        ],
+        aegyo: '다람쥐처럼 톡톡! 매끈하고 예쁜 종아리 라인 완성이라구웅~ ✨'
+      },
+      {
+        animal: '🦊 Fox',
+        avatar: '🦊',
+        name: '여우 같은 어깨-승모근 리셋 스트레칭 🦊',
+        guides: [
+          '양 어깨를 귀까지 쓱 올렸다가 뒤로 툭 떨어뜨리기!',
+          '책상 아래서 손가락 깍지 끼고 가슴 살짝 열어주기!',
+          '칠판 받아 적는 척하면서 목 선 늘려주기!'
+        ],
+        aegyo: '여우처럼 꼬리 치듯 슬그머니 어깨 피로 싹 날렸당~ 최고최고! 💕'
+      },
+      {
+        animal: '🐱 Cat',
+        avatar: '🐱',
+        name: '고양이 발가락 꼼지락 코어 세우기 🐾',
+        guides: [
+          '신발 속에서 발가락을 꽉 쥐었다가 쫙 펴주기!',
+          '골반을 세우고 허리를 곧게 펼쳐 곧은 자세 유지!',
+          '자세 좋아져서 쌤한테 칭찬받는 건 덤이라구용!'
+        ],
+        aegyo: '야옹~ 고양이처럼 도도하게 코어 바로잡았지용! 뿜뿜! ✨'
+      }
+    ];
+
+    let currentDay = '월';
+
+    function goToStep(stepNum) {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.add('hidden');
+      document.getElementById('step3').classList.add('hidden');
+
+      document.getElementById(`step${stepNum}`).classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+        toast.classList.remove('opacity-100');
+      }, 2500);
+    }
+
+    function selectDay(day) {
+      currentDay = day;
+      document.getElementById('selectedDayBadge').innerText = `${day}요일 시간표 💕`;
+      renderPeriodRows(DEFAULT_TIMETABLES[day]);
+      goToStep(2);
+      showToast(`${day}요일 시간표를 불러왔어용~! 쌤 기분 체크해죠!✨`);
+    }
+
+    function renderPeriodRows(subjectList) {
+      const container = document.getElementById('periodsContainer');
+      container.innerHTML = '';
+
+      subjectList.forEach((subjId, idx) => {
+        const periodNum = idx + 1;
+        const subjObj = SUBJECTS.find(s => s.id === subjId) || SUBJECTS[0];
+
+        const row = document.createElement('div');
+        row.className = "period-row bg-white/10 p-3 md:p-4 rounded-2xl border border-white/20 hover:border-pink-400 transition-all space-y-3";
+        row.setAttribute('data-period', periodNum);
+
+        row.innerHTML = `
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="bg-pink-500 text-white text-xs md:text-sm font-black px-2.5 py-1 rounded-lg">
+                ${periodNum}교시
+              </span>
+              <!-- Subject Dropdown -->
+              <select onchange="onSubjectChange(${periodNum}, this.value)" class="subject-select bg-purple-950/90 text-yellow-300 border border-pink-400/60 rounded-xl px-2.5 py-1.5 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-cyan-300">
+                ${SUBJECTS.map(s => `
+                  <option value="${s.id}" ${s.id === subjObj.id ? 'selected' : ''}>
+                    ${s.name} (${s.teacher} 쌤)
+                  </option>
+                `).join('')}
+              </select>
+            </div>
+
+            <!-- Emergency Badge for Danger Teachers -->
+            <div id="dangerBadge-${periodNum}" class="${subjObj.isDangerous ? '' : 'hidden'} font-extrabold text-xs bg-red-600 text-yellow-200 px-2.5 py-1 rounded-full flash-alert border border-yellow-300">
+              🚨 벌점주의보! (${subjObj.teacher} 쌤)
+            </div>
+          </div>
+
+          <!-- Description Hint -->
+          <p id="subjDesc-${periodNum}" class="text-xs text-cyan-200 italic">
+            ${subjObj.desc}
+          </p>
+
+          <!-- Teacher Mood Slider -->
+          <div class="flex items-center gap-3 bg-black/30 p-2.5 rounded-xl border border-white/10">
+            <span class="text-xs text-pink-200 font-bold whitespace-nowrap">오늘 쌤 기분:</span>
+            <span class="text-lg">😊</span>
+            <input type="range" min="1" max="5" value="3" oninput="updateMoodEmoji(${periodNum}, this.value)" class="mood-slider w-full accent-pink-500 cursor-pointer">
+            <span class="text-lg">😡</span>
+            <span id="moodLabel-${periodNum}" class="text-xs font-black text-yellow-300 w-12 text-center">보통!</span>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function onSubjectChange(periodNum, subjId) {
+      const subjObj = SUBJECTS.find(s => s.id === subjId);
+      if (!subjObj) return;
+
+      const dangerBadge = document.getElementById(`dangerBadge-${periodNum}`);
+      const descElem = document.getElementById(`subjDesc-${periodNum}`);
+
+      descElem.innerText = subjObj.desc;
+
+      if (subjObj.isDangerous) {
+        dangerBadge.classList.remove('hidden');
+        showToast(`🚨 경고! ${subjObj.teacher} 쌤 등장! 벌점 조심해용!`);
+      } else {
+        dangerBadge.classList.add('hidden');
+      }
+    }
+
+    function updateMoodEmoji(periodNum, val) {
+      const moodLabel = document.getElementById(`moodLabel-${periodNum}`);
+      const labels = ['최상!!', '좋음~', '보통!', '나쁨⚡', '극노!!🚨'];
+      moodLabel.innerText = labels[val - 1];
+
+      if (val >= 4) {
+        moodLabel.className = "text-xs font-black text-red-400 w-12 text-center animate-pulse";
+      } else {
+        moodLabel.className = "text-xs font-black text-yellow-300 w-12 text-center";
+      }
+    }
+
+    function calculateBestExercise() {
+      const rows = document.querySelectorAll('.period-row');
+      let bestPeriod = 1;
+      let maxScore = -999;
+      let bestSubject = null;
+      let hasEmergencyTeacher = false;
+
+      rows.forEach(row => {
+        const periodNum = row.getAttribute('data-period');
+        const subjId = row.querySelector('.subject-select').value;
+        const moodVal = parseInt(row.querySelector('.mood-slider').value);
+
+        const subjObj = SUBJECTS.find(s => s.id === subjId) || SUBJECTS[0];
+
+        if (subjObj.isDangerous && moodVal >= 4) {
+          hasEmergencyTeacher = true;
+        }
+
+        // Calculation: Stealth base score - (Mood Penalty * 12) + random variation
+        let score = subjObj.stealthBase - ((moodVal - 1) * 12) + Math.floor(Math.random() * 8);
+        if (score > maxScore) {
+          maxScore = score;
+          bestPeriod = periodNum;
+          bestSubject = subjObj;
+        }
+      });
+
+      // Clamp score to 60-99
+      const finalScore = Math.min(99, Math.max(62, maxScore));
+
+      // Pick Random Exercise
+      const randomEx = EXERCISES[Math.floor(Math.random() * EXERCISES.length)];
+
+      // Populate Step 3 Results
+      document.getElementById('resPeriod').innerText = `${bestPeriod}교시`;
+      document.getElementById('resSubject').innerText = `${bestSubject.name} (${bestSubject.teacher} 쌤)`;
+      document.getElementById('resAvatar').innerText = randomEx.avatar;
+      document.getElementById('resExerciseName').innerText = randomEx.name;
+      document.getElementById('resAnimalTag').innerText = `"${randomEx.animal}처럼 은밀하구 완벽하게!"`;
+      
+      document.getElementById('resScoreText').innerText = `${finalScore}점 / 100점`;
+      document.getElementById('resScoreBar').style.width = `${finalScore}%`;
+
+      // Render Guide List
+      const guideList = document.getElementById('resGuideList');
+      guideList.innerHTML = randomEx.guides.map(g => `<li>${g}</li>`).join('');
+
+      document.getElementById('resAegyoComment').innerText = `"${randomEx.aegyo}"`;
+
+      // Show/Hide Emergency Warning Box
+      const emergencyBox = document.getElementById('emergencyWarningBox');
+      if (hasEmergencyTeacher) {
+        emergencyBox.classList.remove('hidden');
+      } else {
+        emergencyBox.classList.add('hidden');
+      }
+
+      goToStep(3);
+      showToast('🎉 분석 완룍! 오늘 최고의 운동시간을 찾아냈당!');
+    }
+
+    function shareResult() {
+      const period = document.getElementById('resPeriod').innerText;
+      const subject = document.getElementById('resSubject').innerText;
+      const exName = document.getElementById('resExerciseName').innerText;
+
+      const shareText = `[몰래운동 추천 💕]\n오늘 나의 BEST 몰래운동 타임은 ${period} ${subject}!\n추천 운동: ${exName}\n\n너도 수업시간 몰래 살빼러 가볼랭? 🏋️‍♀️✨`;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareText).then(() => {
+          showToast('📋 클립보드에 결과가 복사되었어용! 친구한테 자랑해봐~💕');
+        }).catch(() => {
+          fallbackCopyText(shareText);
+        });
+      } else {
+        fallbackCopyText(shareText);
+      }
+    }
+
+    function fallbackCopyText(text) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast('📋 클립보드 복사 완료용! 💕');
+      } catch (err) {
+        showToast('복사에 실패했어용 ㅠㅠ 직접 공유해죠!');
+      }
+      document.body.removeChild(textarea);
+    }
+  </script>
+</body>
+</html>
